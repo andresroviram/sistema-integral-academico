@@ -1,0 +1,268 @@
+/* ============================================================
+   LoginForm.css — Layout split web (panel izquierdo + panel derecho)
+   ============================================================ */
+
+/* ── Wrapper de pantalla completa ── */
+.login-screen {
+	display: flex;
+	min-height: 100vh;
+	overflow: hidden;
+	background-color: #edf8f3;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PANEL IZQUIERDO — área de marca y decoración
+   ════════════════════════════════════════════════════════════ */
+.login-brand {
+	/* 1.75 = panel derecho (1) × 1.75 → izquierdo es 75 % más ancho */
+	flex: 1.75;
+	background-color: #edf8f3;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	min-height: 100vh;
+}
+
+/* Círculo relleno — esquina superior-izquierda del panel derecho (se recorta por el borde izquierdo) */
+.brand-deco-top {
+	position: absolute;
+	top: -120px;
+	left: -120px;
+	width: 320px;
+	height: 320px;
+	background-color: #2d9b78;
+	border-radius: 50%;
+	opacity: 0.85;
+	pointer-events: none;
+}
+
+/* Círculo de borde pequeño — parte media izquierda */
+.brand-deco-bottom-sm {
+	position: absolute;
+	bottom: 140px;
+	left: 32px;
+	width: 36px;
+	height: 36px;
+	border-radius: 50%;
+	border: 3px solid #2d9b78;
+	background: transparent;
+	opacity: 1;
+	pointer-events: none;
+}
+
+/* Círculo relleno grande — esquina inferior-derecha (recortado) */
+.brand-deco-bottom-lg {
+	position: absolute;
+	bottom: -100px;
+	right: -100px;
+	width: 280px;
+	height: 280px;
+	background-color: #2d9b78;
+	border-radius: 50%;
+	opacity: 0.75;
+	pointer-events: none;
+}
+
+/* Círculo de borde — lado derecho, parcialmente visible */
+.brand-deco-right {
+	position: absolute;
+	top: 50%;
+	right: -55px;
+	transform: translateY(-50%);
+	width: 140px;
+	height: 140px;
+	border-radius: 50%;
+	border: 3px solid #2d9b78;
+	background: transparent;
+	opacity: 0.6;
+	pointer-events: none;
+}
+
+/* Logo central circular */
+.brand-logo {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+
+.brand-logo-circle {
+	width: 160px;
+	height: 160px;
+	border-radius: 50%;
+	background-color: #1a6b55;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 8px 32px rgba(26, 107, 85, 0.35);
+}
+
+.brand-logo-text {
+	font-size: 2.2rem;
+	font-weight: 800;
+	color: #ffffff;
+	letter-spacing: -0.5px;
+	font-style: normal;
+}
+
+/* ════════════════════════════════════════════════════════════
+   PANEL DERECHO — formulario de login
+   ════════════════════════════════════════════════════════════ */
+.login-panel {
+	/* Mitad derecha */
+	flex: 1;
+	background-color: #ffffff;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 3.5rem;
+	min-height: 100vh;
+	position: relative;
+	/* Recorta los círculos que sobresalen por cualquier borde del panel */
+	overflow: hidden;
+}
+
+/* Formulario con ancho máximo cómodo */
+.login-form-inner {
+	width: 100%;
+	max-width: 380px;
+}
+
+/* ── Encabezado del formulario ── */
+.login-header {
+	margin-bottom: 2rem;
+}
+
+.login-title {
+	font-size: 1.75rem;
+	font-weight: 700;
+	color: #1a2332;
+	margin-bottom: 0.45rem;
+}
+
+.login-subtitle {
+	font-size: 0.9rem;
+	color: #6b7280;
+	line-height: 1.55;
+}
+
+/* ── Fila de opciones (checkbox + olvidé mi contraseña) ── */
+.login-options {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	gap: 0.4rem;
+	margin-bottom: 1.4rem;
+	margin-top: 0.2rem;
+}
+
+/* ── Enlace de contraseña olvidada ── */
+.forgot-link {
+	font-size: 0.85rem;
+	color: #1a6b55;
+	font-weight: 500;
+	transition: color 0.2s;
+}
+
+.forgot-link:hover {
+	color: #145544;
+	text-decoration: underline;
+}
+
+.forgot-link:focus-visible {
+	outline: 2px solid #2d9b78;
+	border-radius: 4px;
+}
+
+/* ── Mensaje de retroalimentación ── */
+.feedback {
+	font-size: 0.875rem;
+	padding: 0.65rem 1rem;
+	border-radius: 8px;
+	margin-bottom: 1rem;
+	border: 1.5px solid transparent;
+}
+
+.feedback.success {
+	background-color: #f0fdf4;
+	color: #15803d;
+	border-color: #bbf7d0;
+}
+
+.feedback.error {
+	background-color: #fef2f2;
+	color: #b91c1c;
+	border-color: #fecaca;
+}
+
+/* ── Área de botones (apilados, ancho completo) ── */
+.login-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+	margin-top: 0.25rem;
+}
+
+/* Número de versión al pie */
+.login-version {
+	position: absolute;
+	bottom: 1.25rem;
+	right: 1.75rem;
+	font-size: 0.78rem;
+	color: #adb5bd;
+	letter-spacing: 0.5px;
+}
+
+/* ════════════════════════════════════════════════════════════
+   RESPONSIVE — en móvil el panel izquierdo se oculta
+   ════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+	.login-brand {
+		display: none;
+	}
+
+	.login-panel {
+		padding: 2rem 1.5rem;
+	}
+}
+/* ============================================================
+   RegisterForm.css — Estilos exclusivos del formulario de registro
+   El layout split (pantalla, panels, decoraciones) lo hereda de LoginForm.css
+   ============================================================ */
+
+/* Enlace para volver al login desde la pantalla de registro */
+.register-login-link {
+	margin-top: 1.25rem;
+	text-align: center;
+	font-size: 0.875rem;
+	color: #6b7280;
+}
+
+/* Botón-enlace sin estilos de botón para parece un <a> */
+.link-btn {
+	background: none;
+	border: none;
+	padding: 0;
+	font-size: inherit;
+	font-weight: 600;
+	color: #1a6b55;
+	cursor: pointer;
+	transition: color 0.2s;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+.link-btn:hover {
+	color: #145544;
+}
+
+.link-btn:focus-visible {
+	outline: 2px solid #2d9b78;
+	border-radius: 3px;
+}

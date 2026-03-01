@@ -1,0 +1,35 @@
+/* ============================================================
+   DatePicker.css — Estilos específicos para el input type="date"
+   ============================================================ */
+
+/* El input de fecha hereda los estilos base de .input-field (Input.css).
+   Solo se sobreescriben las diferencias visuales propias del tipo date. */
+
+.date-field {
+	/* Asegura que el icono de calendario nativo se vea en el color de la marca */
+	color-scheme: light;
+	/* Ocupa todo el ancho disponible */
+	width: 100%;
+	/* Evita que el campo sea más pequeño que el texto */
+	min-width: 0;
+}
+
+/* Estiliza el placeholder que muestran algunos navegadores antes de seleccionar */
+.date-field::-webkit-datetime-edit-text,
+.date-field::-webkit-datetime-edit-month-field,
+.date-field::-webkit-datetime-edit-day-field,
+.date-field::-webkit-datetime-edit-year-field {
+	color: #374151;
+}
+
+/* Botón del calendario (ícono nativo) */
+.date-field::-webkit-calendar-picker-indicator {
+	cursor: pointer;
+	opacity: 0.6;
+	filter: invert(40%) sepia(80%) saturate(400%) hue-rotate(120deg);
+	transition: opacity 0.2s;
+}
+
+.date-field::-webkit-calendar-picker-indicator:hover {
+	opacity: 1;
+}

@@ -1,0 +1,31 @@
+/* ============================================================
+   Checkbox.css — Estilos para el componente Checkbox
+   ============================================================ */
+
+/* Contenedor del grupo checkbox + label */
+.checkbox-group {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+/* Checkbox nativo estilizado */
+.checkbox-input {
+	width: 1rem;
+	height: 1rem;
+	accent-color: #3b82f6; /* Color de la marca al activarse */
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+/* Etiqueta del checkbox */
+.checkbox-label {
+	font-size: 0.875rem;
+	color: #374151;
+	cursor: pointer;
+	user-select: none;
+}
+
+.checkbox-label:hover {
+	color: #1d4ed8;
+}

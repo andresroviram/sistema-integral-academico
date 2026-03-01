@@ -1,0 +1,66 @@
+/* ============================================================
+   Button.css — Estilos para el componente Button
+   ============================================================ */
+
+/* Base compartida de todos los botones */
+.btn {
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
+	padding: 0.72rem 1.4rem;
+	border-radius: 8px;
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	border: 2px solid transparent;
+	transition:
+		background-color 0.2s,
+		color 0.2s,
+		box-shadow 0.2s,
+		opacity 0.2s;
+	white-space: nowrap;
+}
+
+.btn:focus-visible {
+	outline: 3px solid #93c5fd;
+	outline-offset: 2px;
+}
+
+/* ── Variante primaria (Iniciar sesión) ── */
+.btn-primary {
+	background-color: #1a6b55;
+	color: #ffffff;
+	border-color: #1a6b55;
+}
+
+.btn-primary:hover:not(:disabled) {
+	background-color: #145544;
+	box-shadow: 0 4px 14px rgba(26, 107, 85, 0.35);
+}
+
+.btn-primary:active:not(:disabled) {
+	background-color: #0f3d31;
+}
+
+/* ── Variante secundaria (Registrarme) ── */
+.btn-secondary {
+	background-color: transparent;
+	color: #1a6b55;
+	border-color: #1a6b55;
+}
+
+.btn-secondary:hover:not(:disabled) {
+	background-color: #edf8f3;
+	box-shadow: 0 4px 12px rgba(26, 107, 85, 0.15);
+}
+
+.btn-secondary:active:not(:disabled) {
+	background-color: #d4efe6;
+}
+
+/* Estado deshabilitado */
+.btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
