@@ -14,7 +14,7 @@
  */
 
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "../../components/Button/Button";
 import Checkbox from "../../components/Checkbox/Checkbox";
 import InputPassword from "../../components/InputPassword/InputPassword";
@@ -105,14 +105,6 @@ const LoginForm = () => {
 		navigate("/register");
 	};
 
-	/* ── Manejador del enlace "Olvidé mi contraseña" ──────────────────────
-	 * useNavigate navega a la ruta /reset.
-	 * ────────────────────────────────────────────────────────────────────── */
-	const handleForgotPassword = (e) => {
-		e.preventDefault();
-		navigate("/reset");
-	};
-
 	/* ── Renderizado del componente ─────────────────────────────────────────
 	 * Layout split: panel izquierdo de marca + panel derecho con el formulario.
 	 * En móvil (<768 px) el panel de marca se oculta via CSS.
@@ -186,14 +178,13 @@ const LoginForm = () => {
 								checked={formData.rememberMe}
 								onChange={handleCheckbox}
 							/>
-							<a
-								href="/forgot-password"
-								onClick={handleForgotPassword}
+							<Link
+								to="/reset"
 								className="forgot-link"
 								aria-label="Recuperar contraseña olvidada"
 							>
 								Olvidé mi contraseña
-							</a>
+							</Link>
 						</div>
 
 						{/* Mensaje de retroalimentación — role="alert" para lectores de pantalla */}
