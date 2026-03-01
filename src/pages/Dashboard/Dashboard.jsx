@@ -5,7 +5,7 @@
  *
  * Estructura:
  *   ┌──────────┬───────────────────────────────────────────┐
- *   │ Sidebar  │ Topbar                                    │
+ *   │ Sidebar  │ Navbar                                    │
  *   │          ├───────────────────────────────────────────┤
  *   │          │ Métricas (4 tarjetas)                     │
  *   │          │ Top 5 alumnos │ Promedio por grupo        │
@@ -28,9 +28,9 @@ import {
 	YAxis,
 } from "recharts";
 import MetricCard from "../../components/MetricCard/MetricCard";
+import Navbar from "../../components/Navbar/Navbar";
 import Sidebar from "../../components/Sidebar/Sidebar";
 import Toast from "../../components/Toast/Toast";
-import Topbar from "../../components/Topbar/Topbar";
 
 import "./Dashboard.css";
 
@@ -118,10 +118,10 @@ const Dashboard = () => {
 				collapsed={collapsed}
 			/>
 
-			{/* ── Área principal: topbar + contenido ── */}
+			{/* ── Área principal: navbar + contenido ── */}
 			<div className="dashboard-main">
-				{/* Topbar */}
-				<Topbar
+				{/* Navbar */}
+				<Navbar
 					title="Dashboard"
 					userName="Carlos Pérez"
 					userRole="Administrador"

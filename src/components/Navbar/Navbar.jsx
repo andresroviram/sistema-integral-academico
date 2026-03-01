@@ -1,5 +1,5 @@
 /**
- * Topbar.jsx
+ * Navbar.jsx
  * ----------
  * Barra de navegación superior del dashboard.
  * Muestra el título de la vista, acciones rápidas (tema, notificaciones)
@@ -16,7 +16,7 @@
 import PropTypes from "prop-types";
 import { useNavigate } from "react-router-dom";
 
-const Topbar = ({
+const Navbar = ({
 	title,
 	userName,
 	userRole,
@@ -98,7 +98,7 @@ const Topbar = ({
 	);
 };
 
-Topbar.propTypes = {
+Navbar.propTypes = {
 	title: PropTypes.string.isRequired,
 	userName: PropTypes.string.isRequired,
 	userRole: PropTypes.string.isRequired,
@@ -106,4 +106,4 @@ Topbar.propTypes = {
 	notifCount: PropTypes.number,
 };
 
-export default Topbar;
+export default Navbar;
