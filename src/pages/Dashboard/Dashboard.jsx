@@ -93,6 +93,11 @@ const Dashboard = () => {
 	/* Estado del ítem activo del sidebar */
 	const [activeItem, setActiveItem] = useState("dashboard");
 
+	/* Estado colapsado del sidebar */
+	const [collapsed, setCollapsed] = useState(false);
+
+	const handleToggleSidebar = () => setCollapsed((prev) => !prev);
+
 	/* Estado del toast de bienvenida */
 	const [toast, setToast] = useState({
 		visible: true,
@@ -105,9 +110,13 @@ const Dashboard = () => {
 		setToast((prev) => ({ ...prev, visible: false }));
 
 	return (
-		<div className="dashboard-root">
+		<div className={`dashboard-root${collapsed ? " sidebar-collapsed" : ""}`}>
 			{/* ── Sidebar ── */}
-			<Sidebar activeItem={activeItem} onNavigate={setActiveItem} />
+			<Sidebar
+				activeItem={activeItem}
+				onNavigate={setActiveItem}
+				collapsed={collapsed}
+			/>
 
 			{/* ── Área principal: topbar + contenido ── */}
 			<div className="dashboard-main">
@@ -117,6 +126,7 @@ const Dashboard = () => {
 					userName="Carlos Pérez"
 					userRole="Administrador"
 					notifCount={3}
+					onMenuToggle={handleToggleSidebar}
 				/>
 
 				{/* Contenido scrollable */}
